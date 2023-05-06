@@ -1,7 +1,4 @@
 #!/bin/bash
-#arguments
-a=franco
-b=randriamasy
 #be carefull with the syntax you have to add space in order to consider it as integer otherwise it is showing strings 
 expr 5 + 3
 #expr is like "let" but instead it shows directly the result withou need of echo
@@ -16,5 +13,6 @@ echo $b
 #store in a the result 10-3 and show it 
 a=$(expr 10 - 3 )
 echo $a 
-
-
+#length of a variable ${#expession}
+b='randriamasy'
+echo ${#b}
