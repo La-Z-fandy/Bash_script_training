@@ -11,7 +11,6 @@ S=$(ls -lrt $R1)
 #Initialise variable count C
 C=1
 
-
 #Create C number of file.txt
 while (($C<=10))
 do 
