@@ -1,4 +1,6 @@
 #!/bin/bash 
+#						Developez.com
+#						Devempper.com
 #V1.0-créer un script qui demande à l'utilisateur de saisir une note et qui affiche un message en fonction de cette note:
 	#"très bien" si la note est entre 16 et 20
 	#"bien" lorsqu'elle est entre 14 et 16
@@ -14,18 +16,18 @@ G3="assez bien"
 G4="moyen"
 G5="insuffisant"
 tot=0
-#Ici on a va supposer qu'il y a un nombre définit de note à rentrer "dison 10 notes"
+#Ici on a va supposer qu'il y a un nombre définit de note à rentrer "disons 10 notes"
 
 for (( C=1; C<=10;C++))
 do
 #demander à l'utilisateur de rentrer les notes
-	echo "donne une note $C1 sur 20"
+	echo "donne une note sur 20"
 	read -a note
 #fait la somme des éléments données puis calcule la moyenne
 	let tot+=${note[@]}
 	let Average=$tot/$C
 #création d'une condition de sortie dans le cas où l'utilisateur rentre une note négative ou la lettre q
-	if [[ $note -le 0 ]] || [[ $note -eq 'q' ]] ; then
+	if [[ $note -lt 0 ]] || [[ $note -eq 'q' ]] ; then
 		break
 	fi
 done
