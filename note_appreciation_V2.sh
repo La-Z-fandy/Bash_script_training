@@ -13,16 +13,36 @@ G2="bien"
 G3="assez bien"
 G4="moyen"
 G5="insuffisant"
-C=1
-#Demander à l'utilisateur de renter n nombre de note 
-while [[ $C -le 10 ]]
+tot=0
+#Ici on a va supposer qu'il y a un nombre définit de note à rentrer "dison 10 notes"
+
+for (( C=1; C<=10;C++))
 do
-	echo "Note numéro $C /20 "
-	((C++))
-	read  Note
-#condition to allow the user to quit the while loop if negative number or letter q is given in the input 
-	if [[ "$Note" -le 0 ]] || [[ "$Note" = 'q' ]] ; then
-	break
+#demander à l'utilisateur de rentrer les notes
+	echo "donne une note $C1 sur 20"
+	read -a note
+#fait la somme des éléments données puis calcule la moyenne
+	let tot+=${note[@]}
+	let Average=$tot/$C
+#création d'une condition de sortie dans le cas où l'utilisateur rentre une note négative ou la lettre q
+	if [[ $note -le 0 ]] || [[ $note -eq 'q' ]] ; then
+		break
 	fi
-done 
-echo "$Note$C"
+done
+#condition pour savoir s'il y a mention au niveau de la moyenne
+
+if [[ $Average -gt 16 ]]; then
+	echo "Votre moyenne globale est de $Average/20 avec la mension suivante '$G1'"
+elif [[ $Average -gt 14 ]]; then
+	echo "Votre moyenne globale est de $Average/20 avec la mension suivante '$G2'"
+elif [[ $Average -gt 12 ]]; then
+	echo "Votre moyenne globale est de $Average/20 avec la mension suivante '$G3'"
+elif [[ $Average -gt 10 ]]; then
+	echo "Votre moyenne globale est de $Average/20 avec la mension suivante '$G4'"
+else
+	echo "Votre moyenne globale est de $Average/20 avec la mension suivante '$G5'"
+
+fi
+
+
+
