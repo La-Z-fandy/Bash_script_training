@@ -1,6 +1,11 @@
 #!/bin/bash
 #developpez.com
 #créer un script qui prend un nombre de saisie et l'élève à sa propre puissance. boucle for est imposé
-let var=10**2
-echo "$var"
+echo "Veuillez entrer un nombre"
+read -a n
+for C in ${n[@]}
+do
+	let r=$n**$C
+done
 
+echo "$r"

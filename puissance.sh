@@ -6,10 +6,7 @@ echo "Veuillez entrer un nombre quelconque"
 read -a  n
 for C in ${n[@]}
 do
-	if [[ $n -le 0 ]]; then
-	break
-	fi
-	let r=$n**$C
+	 r=n**$C
 done
 echo "$r"
 
