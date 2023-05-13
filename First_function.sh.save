@@ -1,0 +1,10 @@
+#!/bin/bash
+#first function
+#fonction age 
+
+age(){
+	Birth_y=$1
+	let age=2023-$1
+}
+
+
